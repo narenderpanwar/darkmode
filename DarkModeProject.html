@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+    
+      .main {
+        margin:0;
+        /* padding: 20px; */
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      #on {
+        display: none;
+      }
+      #off {
+        display: none;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="main text-center">
+      <button onclick="on()" id="on" type="button" class="btn btn-outline-dark">
+        Turn ON
+      </button>
+      <button
+        onclick="off()"
+        id="off"
+        type="button"
+        class="btn btn-outline-dark"
+      >
+        Turn OFF
+      </button>
+  
+      <div class="container mt-4 b">
+        <div class="card  mx-auto" style="width: 18rem">
+          <img class="card-img-top" src="golu.jpg" alt="Card image cap" />
+          <div id="cardBody" class="card-body">
+            <h5 class="card-title">Hey there,</h5>
+            <p id="cardText" class="card-text">
+            This is Narender Panwar, <br> A tech enthusiast from Noida. Currently pursuing MCA from CDAC Noida.
+            </p>
+            <button
+              onclick="toggle()"
+              id="toggle"
+              type="button"
+              class="btn btn-outline-dark"
+            >
+              Turn ON
+            </button>
+          </div>
+        </div>
+        <p>Created by Narender Panwar</p>
+      </div>
+    </div>
+
+    <script>
+      const on = () => {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        // on.innerHTML="Turn OFF";
+        // on.setAttribute("class", "btn btn-outline-dark");
+      };
+
+      const off = () => {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        // off.innerHTML="Turn ON";
+        // off.setAttribute("class", "btn btn-outline-light");
+      };
+
+      const toggle = () => {
+        let toggle = document.getElementById("toggle");
+        let btnColor3 = toggle.getAttribute("class");
+        let card = document.getElementById("cardBody");
+        // console.log(card);
+
+        if (toggle.innerHTML == "Turn ON") {
+          on();
+          toggle.innerHTML = "Turn OFF";
+          toggle.setAttribute("class", "btn btn-outline-light");
+          card.style.background = "black";
+          card.style.color = "white";
+        } else {
+          off();
+          toggle.innerHTML = "Turn ON";
+          toggle.setAttribute("class", "btn btn-outline-dark");
+          card.style.background = "white";
+          card.style.color = "black";
+        }
+      };
+    </script>
+  </body>
+</html>
